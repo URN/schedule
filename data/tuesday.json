@@ -1,0 +1,79 @@
+[
+    {
+        "start": 7,
+        "finish": 9,
+        "name": "The Twilight Zone",
+        "slug": "the-twilight-zone",
+        "type": "after-dark"
+    },
+    {
+        "start": 9,
+        "finish": 11,
+        "name": "The Wake-Up Club (With Danica and Chesca)",
+        "slug": "the-wake-up-club",
+        "type": "daytime"
+    },
+    {
+        "start": 11,
+        "finish": 13,
+        "name": "The Zaina Khan Show",
+        "slug": "the-zaina-khan-show",
+        "type": "daytime"
+    },
+    {
+        "start": 13,
+        "finish": 15,
+        "name": "Deep Dive (With Omay and Abeeha)",
+        "slug": "deep-dive",
+        "type": "daytime"
+    },
+    {
+        "start": 15,
+        "finish": 17,
+        "name": "No Brainers (With Grace and Emma)",
+        "slug": "no-brainers",
+        "type": "daytime"
+    },
+    {
+        "start": 17,
+        "finish": 18,
+        "name": "The Pulse (with Tom and Lottie)",
+        "slug": "the-pulse-with-tom-and-lottie",
+        "type": "news"
+    },
+    {
+        "start": 18,
+        "finish": 19,
+        "name": "Tuesday Sports Show",
+        "slug": "tuesday-sports-show",
+        "type": "sport"
+    },
+    {
+        "start": 19,
+        "finish": 21,
+        "name": "The Early Get Up",
+        "slug": "the-early-get-up",
+        "type": "after-dark"
+    },
+    {
+        "start": 21,
+        "finish": 23,
+        "name": "Groove Theory",
+        "slug": "groove-theory",
+        "type": "after-dark"
+    },
+    {
+        "start": 23,
+        "finish": 1,
+        "name": "Will Griffin and Ross Williams",
+        "slug": "will-griffin-and-ross-williams",
+        "type": "after-dark"
+    },
+    {
+        "start": 1,
+        "finish": 3,
+        "name": "The Nighttime Project",
+        "slug": "the-nighttime-project",
+        "type": "after-dark"
+    }
+]

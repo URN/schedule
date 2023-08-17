@@ -1,0 +1,100 @@
+[
+    {
+        "start": 7,
+        "finish": 9,
+        "name": "Cinema Scope",
+        "slug": "cinema-scope",
+        "type": "after-dark"
+    },
+    {
+        "start": 7,
+        "finish": 9,
+        "name": "The French Show",
+        "slug": "the-french-show",
+        "type": "after-dark"
+    },
+    {
+        "start": 9,
+        "finish": 11,
+        "name": "Daytime Dose of J-Lo (With Jacob and Flo)",
+        "slug": "daytime-dose-of-j-lo",
+        "type": "daytime"
+    },
+    {
+        "start": 11,
+        "finish": 13,
+        "name": "Vinyl Destination (With Mehreen)",
+        "slug": "vinyl-destination",
+        "type": "daytime"
+    },
+    {
+        "start": 13,
+        "finish": 15,
+        "name": "Watcha Listening To? (With Abi)",
+        "slug": "watcha-listening-to",
+        "type": "daytime"
+    },
+    {
+        "start": 15,
+        "finish": 17,
+        "name": "It's Margot Mondays",
+        "slug": "its-margot-mondays",
+        "type": "daytime"
+    },
+    {
+        "start": 17,
+        "finish": 18,
+        "name": "The Pulse (with Callum and Jack)",
+        "slug": "the-pulse-with-callum-and-jack",
+        "type": "news"
+    },
+    {
+        "start": 18,
+        "finish": 19,
+        "name": "Big Monday Night In",
+        "slug": "big-monday-night-in",
+        "type": "sport"
+    },
+    {
+        "start": 19,
+        "finish": 21,
+        "name": "No Drama Just Garage",
+        "slug": "no-drama-just-garage",
+        "type": "after-dark"
+    },
+    {
+        "start": 19,
+        "finish": 21,
+        "name": "The Next Fix",
+        "slug": "the-next-fix",
+        "type": "after-dark"
+    },
+    {
+        "start": 21,
+        "finish": 23,
+        "name": "Kudescorner",
+        "slug": "kudescorner",
+        "type": "after-dark"
+    },
+    {
+        "start": 21,
+        "finish": 23,
+        "name": "Moozika",
+        "slug": "moozika",
+        "type": "after-dark"
+    },
+    {
+        "start": 23,
+        "finish": 1,
+        "name": "Woah Bessy!!",
+        "slug": "woah-bessy",
+        "type": "after-dark"
+    },
+    {
+        "start": 1,
+        "finish": 3,
+        "name": "Nightshift",
+        "slug": "nightshift",
+        "type": "after-dark"
+    }
+]
