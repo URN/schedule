@@ -3,6 +3,8 @@ import { graphql, type HeadFC } from "gatsby"
 import Layout, { createHead } from "../layouts/page"
 import ShowCard, { type Show } from "../components/ShowCard";
 
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
 interface IndexProps {
   data: {
     allShows: {
@@ -14,16 +16,14 @@ interface IndexProps {
 const IndexPage: React.FC<IndexProps> = ({ data }) => {
   return (
     <Layout>
-      <h1>Monday</h1>
-      {data.allShows.nodes.filter(show => show.parent.day === "monday").map(show => (
-        <ShowCard key={show.id} {...show} />
-      ))}
+      {DAYS.map(day => <>
+        <h1>{day}</h1>
+        {
+          data.allShows.nodes.filter(show => show.parent.day === day.toLowerCase()).map(show => (
+            <ShowCard key={show.id} {...show} />))
+        }
+      </>)}
 
-
-      <h1>Tuesday</h1>
-      {data.allShows.nodes.filter(show => show.parent.day === "tuesday").map(show => (
-        <ShowCard key={show.id} {...show} />
-      ))}
     </Layout>
   )
 }
