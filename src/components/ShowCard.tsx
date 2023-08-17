@@ -30,9 +30,15 @@ const Card = styled.div<Props>`
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    transition: all 0.2s ease-in-out;
 
     @media (max-width: 750px) {
         text-align: center;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+        background: ${(props) => props.colour}dd;
     }
 
 `;
