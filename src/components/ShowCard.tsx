@@ -30,6 +30,11 @@ const Card = styled.div<Props>`
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+
+    @media (max-width: 750px) {
+        text-align: center;
+    }
+
 `;
 
 Card.defaultProps = {
@@ -41,6 +46,11 @@ const TimeTag = styled.span`
     border-radius: 5px;
     padding: 5px;
     margin-right: 10px;
+
+    @media (max-width: 750px) {
+        margin-bottom: 15px;
+        display: block;
+    }
 `;
 
 const ShowCard = (props: Show) => {

@@ -25,7 +25,7 @@ const Header = styled.h1`
     font-weight: normal;
     margin: 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
         text-align: center;
     }
 `
@@ -34,6 +34,11 @@ const Subheader = styled.h2`
     font-size: 2.5rem;
     margin: 0;
     margin-top: 15px;
+
+    @media (max-width: 900px) {
+        text-align: center;
+        font-size: 2rem;
+    }
 `;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
