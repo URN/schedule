@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, type HeadFC } from "gatsby"
 import Layout, { createHead } from "../layouts/page"
+import styled from "styled-components";
 import ShowCard from "../components/ShowCard";
 import { type Show } from "../types/Show";
 
@@ -14,16 +15,47 @@ interface IndexProps {
   }
 }
 
+const groupShowsByTime = (shows: Show[]) => {
+  const groupedShows = new Map<string, Show[]>()
+  for (const show of shows) {
+    const key = `${show.start}-${show.finish}`
+    if (!groupedShows.has(key)) {
+      groupedShows.set(key, [])
+    }
+    groupedShows.get(key)?.push(show)
+  }
+  return groupedShows
+}
+
+const TimeSlot = styled.div`
+  display: flex;
+  margin-bottom: 10px;
+`;
+
 const IndexPage: React.FC<IndexProps> = ({ data }) => {
+  let showsByDay: Record<string, Show[]> = {};
+  for (const show of data.allShows.nodes) {
+    if (!showsByDay[show.parent.day]) {
+      showsByDay[show.parent.day] = []
+    }
+    showsByDay[show.parent.day].push(show)
+  };
+
   return (
     <Layout>
-      {DAYS.map(day => <>
-        <h1>{day}</h1>
-        {
-          data.allShows.nodes.filter(show => show.parent.day === day.toLowerCase()).map(show => (
-            <ShowCard key={show.id} {...show} />))
-        }
-      </>)}
+      {showsByDay && Object.keys(showsByDay).map((day, i) => {
+        const shows = showsByDay[day]
+        const groupedShows = groupShowsByTime(shows)
+
+        return <div key={i}>
+          <h1>{DAYS[i]}</h1>
+          {Array.from(groupedShows).map(([key, shows]) => <>
+            <TimeSlot id={key}>
+              {shows.map((show, i) => <ShowCard key={i} {...show} />)}
+            </TimeSlot>
+          </>)}
+        </div>
+      })}
 
     </Layout>
   )
@@ -34,20 +66,20 @@ export default IndexPage
 export const Head: HeadFC = createHead({ title: "Schedule" })
 
 export const query = graphql`
-  query AllShows {
-    allShows {
-      nodes {
+      query AllShows {
+        allShows {
+        nodes {
         name
         start
-        finish
-        id
-        type
-        parent {
-          ... on File {
-            day: name
+      finish
+      id
+      type
+      parent {
+        ...on File {
+        day: name
           }
         }
       }
     }
   }
-`;
+      `;

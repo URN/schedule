@@ -22,7 +22,9 @@ const ShowCard = (props: Show) => {
 
     return (
         <Card colour={areaColour}>
-            <h2><TimeTag>{start12HourString}-{finish12HourString}</TimeTag> {props.name}</h2>
+            <div className="show-card-inner">
+                <h2><TimeTag>{start12HourString}-{finish12HourString}</TimeTag> {props.name}</h2>
+            </div>
         </Card>
     )
 }
