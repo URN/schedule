@@ -10,10 +10,6 @@ const AREA_COLOURS = {
     "culture": "#ea4b2a",
 }
 
-export interface Props {
-    colour: string
-}
-
 const ShowCard = (props: Show) => {
     const start12HourString = props.start > 12 ? `${props.start - 12}pm` : `${props.start}am`;
     const finish12HourString = props.finish > 12 ? `${props.finish - 12}pm` : `${props.finish}am`;
@@ -21,7 +17,7 @@ const ShowCard = (props: Show) => {
     const areaColour = AREA_COLOURS[props.type];
 
     return (
-        <Card colour={areaColour}>
+        <Card $colour={areaColour}>
             <div className="show-card-inner">
                 <h2><TimeTag>{start12HourString}-{finish12HourString}</TimeTag> {props.name}</h2>
             </div>

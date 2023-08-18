@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import { Props } from ".";
 
-export const Card = styled.div<Props> `
-    background: ${(props) => props.colour}aa;
+
+
+export const Card = styled.div<({ $colour: string }) > `
+    background: ${(props) => props.$colour}aa;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
@@ -16,7 +17,7 @@ export const Card = styled.div<Props> `
 
     &:hover {
         transform: scale(1.01);
-        background: ${(props) => props.colour}dd;
+        background: ${(props) => props.$colour}dd;
     }
 
     .show-card-inner {
@@ -36,8 +37,4 @@ export const TimeTag = styled.span`
         display: block;
     }
 `;
-
-Card.defaultProps = {
-    colour: "#2e343f"
-}
 
