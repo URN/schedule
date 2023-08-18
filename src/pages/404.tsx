@@ -1,49 +1,23 @@
 import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import { PageProps, type HeadFC } from "gatsby"
+import Layout, { createHead } from "../layouts/page"
+import { StaticImage } from "gatsby-plugin-image"
+import { ExternalLink, Link } from "../components/Link"
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const IndexPage: React.FC<PageProps> = () => {
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout title="Page Not Found" description="The page you're looking for doesn't exist. Check the URL and try again.">
+      <p>Maybe try going back <Link to="/">home</Link>?</p>
+      <figure>
+        <StaticImage src="../images/404_cat.jpg" alt="A sad cat" height={600} />
+        <figcaption>Photo by <ExternalLink href="https://unsplash.com/@wx1993?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Raychan</ExternalLink> on <ExternalLink href="https://unsplash.com/photos/PY3d9NScUP4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</ExternalLink>
+        </figcaption>
+      </figure>
+    </Layout>
   )
 }
 
-export default NotFoundPage
+export default IndexPage
 
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = createHead({ title: "Page Not Found" })
