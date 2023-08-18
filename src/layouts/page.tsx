@@ -4,8 +4,6 @@ import styled, { createGlobalStyle } from "styled-components"
 const DEFAULT_DESCRIPTION = "University Radio Nottingham is the multi-award--winning university radio station of the University of Nottingham Students' Union. During term-time we broadcast locally on University Park Campus and worldwide via our website."
 
 const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-
     @font-face {
         font-family: Milocha;
         src: url(/fonts/Milocha.ttf);
@@ -55,5 +53,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 export const createHead = ({ title, description }: { title?: string, description?: string }) => () => <>
     {title ? <title>URN • {title}</title> : <title>URN</title>}
 
+    <style>
+        /* Font imports */
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description ?? DEFAULT_DESCRIPTION} />
 </>
