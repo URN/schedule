@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 
 
-export const Card = styled.div<({ $colour: string }) > `
+export const Card = styled(Link) <({ $colour: string }) > `
     background: ${(props) => props.$colour}aa;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
     transition: all 0.2s ease-in-out;
     width: 100%;
+    text-decoration: none;
+    color: inherit;
     margin-right: 10px;
 
     @media (max-width: 750px) {

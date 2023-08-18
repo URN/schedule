@@ -73,6 +73,7 @@ query AllShows {
       name
       start
       finish
+      slug
       id
       type
       parent {

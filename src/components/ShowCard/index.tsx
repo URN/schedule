@@ -10,7 +10,7 @@ const ShowCard = (props: Show) => {
     const areaColour = AREA_COLOURS[props.type];
 
     return (
-        <Card $colour={areaColour}>
+        <Card to={`/shows/${props.slug}`} $colour={areaColour}>
             <div className="show-card-inner">
                 <h2><TimeTag>{start12HourString}-{finish12HourString}</TimeTag> {props.name}</h2>
             </div>
