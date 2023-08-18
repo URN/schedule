@@ -50,14 +50,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     )
 }
 
-export const createHead = ({ title, description }: { title?: string, description?: string }) => () => <>
-    {title ? <title>URN • {title}</title> : <title>URN</title>}
+export const createHead = ({ title, description, colour }: { title?: string, description?: string, colour?: string }) => () => <>
+    {title ? <title>URN • {title}</title> : <title>University Radio Nottingham</title>}
 
     <style>
         /* Font imports */
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
     </style>
 
+    <meta name="theme-color" content={colour ?? "#5f2a87"} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description ?? DEFAULT_DESCRIPTION} />
+    <meta name="og:title" content={title ? `URN • ${title}` : "University Radio Nottingham"} />
+    <meta name="og:image" content={"/static/icon.png"} />
 </>
