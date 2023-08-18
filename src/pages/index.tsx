@@ -1,7 +1,8 @@
 import * as React from "react"
 import { graphql, type HeadFC } from "gatsby"
 import Layout, { createHead } from "../layouts/page"
-import ShowCard, { type Show } from "../components/ShowCard";
+import ShowCard from "../components/ShowCard";
+import { type Show } from "../types/Show";
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
