@@ -61,6 +61,7 @@ export const createHead = ({ title, description, colour }: { title?: string, des
     <meta name="theme-color" content={colour ?? "#5f2a87"} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description ?? DEFAULT_DESCRIPTION} />
+    <meta name="og:description" content={description ?? DEFAULT_DESCRIPTION} />
     <meta name="og:title" content={title ? `URN • ${title}` : "University Radio Nottingham"} />
-    <meta name="og:image" content={"/static/icon.png"} />
+    <meta name="og:image" content={"/images/icon.png"} />
 </>
