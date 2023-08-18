@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
+import { URN_PURPLE } from "../constants"
 
 const DEFAULT_DESCRIPTION = "University Radio Nottingham is the multi-award--winning university radio station of the University of Nottingham Students' Union. During term-time we broadcast locally on University Park Campus and worldwide via our website."
 
@@ -59,7 +60,7 @@ export const createHead = ({ title, description, colour }: { title?: string, des
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
     </style>
 
-    <meta name="theme-color" content={colour ?? "#5f2a87"} />
+    <meta name="theme-color" content={colour ?? URN_PURPLE} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description ?? DEFAULT_DESCRIPTION} />
     <meta name="og:description" content={description ?? DEFAULT_DESCRIPTION} />

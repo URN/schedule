@@ -1,14 +1,7 @@
 import * as React from "react"
 import { Show } from "../../types/Show"
 import { Card, TimeTag } from "./styles"
-
-const AREA_COLOURS = {
-    "daytime": "#c60047",
-    "after-dark": "#2e343f",
-    "news": "#007a76",
-    "sport": "#008ac4",
-    "culture": "#ea4b2a",
-}
+import { AREA_COLOURS } from "../../constants"
 
 const ShowCard = (props: Show) => {
     const start12HourString = props.start > 12 ? `${props.start - 12}pm` : `${props.start}am`;
