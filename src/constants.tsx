@@ -7,3 +7,5 @@ export const AREA_COLOURS = {
     "sport": "#008ac4",
     "culture": "#ea4b2a",
 };
+
+export const LINK_PRIMARY = "#d1cddf";
