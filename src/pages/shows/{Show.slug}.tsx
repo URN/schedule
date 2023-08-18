@@ -1,10 +1,10 @@
 import * as React from "react";
 import { graphql } from "gatsby"
-import Page from "../../layouts/page"
+import Page, { createHead } from "../../layouts/page"
 import { Show } from "../../types/Show";
-import ShowCard from "../../components/ShowCard";
 import { getAreaFriendlyName } from "../../utils";
 import { Link } from "../../components/Link";
+import { AREA_COLOURS } from "../../constants";
 
 const capitalise = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -23,6 +23,10 @@ export default function Template({
             <p>Check out all our shows <Link to="/">here!</Link></p>
         </Page >
     )
+}
+
+export const Head = ({ data }: { data: { show: Show } }) => {
+    return createHead({ title: data.show.name, description: `${getAreaFriendlyName(data.show.type)} on URN`, colour: AREA_COLOURS[data.show.type] })
 }
 
 export const pageQuery = graphql`

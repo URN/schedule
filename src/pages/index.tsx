@@ -64,7 +64,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => {
 
 export default IndexPage
 
-export const Head: HeadFC = createHead({ title: "Schedule" })
+export const Head: HeadFC = () => createHead({ title: "Schedule" })
 
 export const query = graphql`
 query AllShows {

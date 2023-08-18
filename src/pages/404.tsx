@@ -20,4 +20,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = createHead({ title: "Page Not Found" })
+export const Head: HeadFC = () => createHead({ title: "Page Not Found" })

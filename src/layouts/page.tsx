@@ -58,7 +58,7 @@ export default function Layout({ children, title, description }: { children: Rea
     )
 }
 
-export const createHead = ({ title, description, colour }: { title?: string, description?: string, colour?: string }) => () => <>
+export const createHead = ({ title, description, colour }: { title?: string, description?: string, colour?: string }) => <>
     {title ? <title>URN • {title}</title> : <title>University Radio Nottingham</title>}
 
     <style>
