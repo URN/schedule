@@ -11,7 +11,8 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: 'Open Sans', sans-serif;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/background.png) repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/images/background.png) repeat;
+        background-attachment: fixed;
         color: #fff;
         margin: 30px;
     };
