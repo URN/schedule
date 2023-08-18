@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: 'Open Sans', sans-serif;
-        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/images/background.png) repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/images/background.png) repeat;
         background-attachment: fixed;
         color: #fff;
         margin: 30px;
@@ -41,13 +41,19 @@ const Subheader = styled.h2`
     }
 `;
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const Main = styled.main`
+    margin-top: 30px;
+`
+
+export default function Layout({ children, title, description }: { children: React.ReactNode, title?: string, description?: string }) {
     return (
         <>
             <GlobalStyles />
-            <Header>University Radio Nottingham</Header>
-            <Subheader>Keep up with our daily schedule and meet our hosts!</Subheader>
-            {children}
+            <Header>{title ?? "University Radio Nottingham"}</Header>
+            <Subheader>{description ?? "Keep up with our daily schedule and meet our hosts!"}</Subheader>
+            <Main>
+                {children}
+            </Main>
         </>
     )
 }
