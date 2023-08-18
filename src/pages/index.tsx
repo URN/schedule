@@ -43,17 +43,18 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => {
 
   return (
     <Layout>
-      {showsByDay && Object.keys(showsByDay).map((day, i) => {
-        const shows = showsByDay[day]
+      {DAYS.map((day, i) => {
+        if (!showsByDay[day.toLowerCase()]) return null;
+
+        const shows = showsByDay[day.toLowerCase()]
         const groupedShows = groupShowsByTime(shows)
 
         return <div key={i}>
-          <h1>{DAYS[i]}</h1>
-          {Array.from(groupedShows).map(([key, shows]) => <>
-            <TimeSlot id={key}>
-              {shows.map((show, i) => <ShowCard key={i} {...show} />)}
-            </TimeSlot>
-          </>)}
+          <h1>{day}</h1>
+          {Array.from(groupedShows).map(([key, shows]) => <TimeSlot key={key}>
+            {shows.map((show, i) => <ShowCard key={i} {...show} />)}
+          </TimeSlot>
+          )}
         </div>
       })}
 
