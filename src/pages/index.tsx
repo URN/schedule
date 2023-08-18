@@ -9,7 +9,7 @@ const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 
 interface IndexProps {
   data: {
-    allShows: {
+    allShow: {
       nodes: Show[]
     }
   }
@@ -34,7 +34,7 @@ const TimeSlot = styled.div`
 
 const IndexPage: React.FC<IndexProps> = ({ data }) => {
   let showsByDay: Record<string, Show[]> = {};
-  for (const show of data.allShows.nodes) {
+  for (const show of data.allShow.nodes) {
     if (!showsByDay[show.parent.day]) {
       showsByDay[show.parent.day] = []
     }
@@ -67,20 +67,20 @@ export default IndexPage
 export const Head: HeadFC = createHead({ title: "Schedule" })
 
 export const query = graphql`
-      query AllShows {
-        allShows {
-        nodes {
-        name
-        start
+query AllShows {
+  allShow {
+    nodes {
+      name
+      start
       finish
       id
       type
       parent {
-        ...on File {
-        day: name
-          }
+        ... on File {
+          day: name
         }
       }
     }
   }
-      `;
+}
+`;
